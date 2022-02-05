@@ -190,11 +190,12 @@
     grid-area: footer-logo;
     grid-column: 2 / 3;
     grid-row: 1 / 2;
+    margin-top: 1.5rem;
 }
 
 .footer__logo-img {
     max-width: 100%;
-    /* min-width: 50px; */
+    min-width: 20px;
     /* padding-top: 0.5rem;
     padding-bottom: 0.5rem; */
 }
@@ -221,6 +222,7 @@
 .footer__list {
     /* padding: 1rem; */
     padding-left: 0;
+
 }
 
 .footer__list li {
@@ -245,6 +247,12 @@
     color: #FFFFFF;
 }
 
+.footer__link:hover {
+    color: #7c7c7c;
+    /* border-top: 1px #7c7c7c solid;
+    border-bottom: 1px #7c7c7c solid; */
+}
+
 .footer__conacts {
     grid-area: contacts;
     grid-column: 4 / 5;
@@ -258,7 +266,7 @@
 
 .footer__conacts-body {
     display: grid;
-    grid-template: 20% 1fr 1fr / 10% 1fr;
+    grid-template: 33% 1fr 40% / 12% 1fr;
 
 }
 
@@ -276,10 +284,15 @@
     display: grid;
     grid-auto-flow: column;
     column-gap: 0.5rem;
+    align-items: start;
 }
 
 .footer__social-media-link {
     text-decoration: none;
+}
+
+.footer__social-media-link:hover {
+    opacity: 0.5;
 }
 
 .footer__copyright {
@@ -301,4 +314,159 @@
     line-height: 22px;
     /* identical to box height, or 183% */
     color: rgba(200, 200, 200, 0.5);
+}
+
+/* перестроить футер для маленьких */
+@media (max-width: 800px) {
+    .wrapper {
+        min-height: 100%;
+        display: grid;
+        /* три строки: шапка, мейн и футер, колонка одна */
+        grid-template: auto 1fr minmax(300px, auto) / 1fr;
+        grid-template-areas:
+            "header"
+            "main"
+            "footer"
+        ;
+    }
+
+    .footer {
+        grid-area: footer;
+        display: grid;
+        grid-template: 1fr 1fr 1fr 1fr 15% / 1fr minmax(auto, 1170px) 1fr;
+        grid-template-areas:
+            "left-gap"
+            "footer-logo"
+            "info"
+            "conacts"
+            "social-media"
+            "right-gap"
+        ;
+        background-color: #2C2C2C;
+        color: #C8C8C8;
+
+        padding-top: 1rem;
+        /* gap: 3rem; */
+        justify-items: stretch;
+    }
+
+    .footer__link {
+        text-decoration: none;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 10px;
+        line-height: 11px;
+        /* identical to box height, or 171% */
+
+        /* display: flex;
+        align-items: flex-start; */
+        letter-spacing: 0.03em;
+        /* margin-top: 0; */
+        color: #FFFFFF;
+    }
+
+    .footer__logo {
+        grid-area: footer-logo;
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+        /* margin-top: 1.5rem; */
+        display: grid;
+        justify-items: center;
+        /* align-content: center; */
+        /* max-width: 70px; */
+
+    }
+
+    .footer__logo-img {
+        max-width: 100%;
+        max-width: 70px;
+    }
+
+    .footer__information {
+        grid-area: info;
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+
+        display: grid;
+        justify-items: center;
+
+    }
+
+    .footer__list {
+        display: grid;
+        grid-auto-flow: column;
+        justify-items: end;
+        /* margin: 0 0 1rem 1rem; */
+    }
+
+    .footer__list li {
+        list-style: none;
+        padding: 0.5rem;
+        padding-left: 0;
+    }
+
+    .footer__conacts {
+        grid-area: contacts;
+        grid-column: 2 / 3;
+        grid-row: 3 / 4;
+
+        display: grid;
+        justify-items: stretch;
+        /* grid-template: 25% 1fr / 1fr; */
+
+        /* margin-right: 3rem; */
+    }
+
+    .footer__link-text {
+        display: none;
+        /* justify-items: stretch; */
+    }
+
+    .footer__conacts-body {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        justify-items: center;
+        /* margin-right: 0rem; */
+    }
+
+    .footer__social-media {
+        grid-area: social-media;
+        grid-column: 2 / 3;
+        grid-row: 4 / 5;
+
+        display: grid;
+        /* grid-template: 25% 1fr / 1fr; */
+    }
+
+    .footer__social-media-body {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        justify-items: center;
+    }
+
+    .footer__copyright {
+        grid-column: 2 / 3;
+        grid-row: 5 / 6;
+
+        display: grid;
+        justify-items: center;
+        align-items: center;
+
+        mix-blend-mode: normal;
+        /* opacity: 0.1; */
+        border: 1px solid #FFFFFF;
+
+        font-family: Open Sans;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 22px;
+
+        color: white;
+    }
+
+    .footer__title {
+        display: none;
+    }
 }
