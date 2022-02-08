@@ -466,10 +466,11 @@
 
     display: grid;
     /* grid-template: minmax(auto, 830px) / 9.3% minmax(auto, 1170px) 9.3%; */
-    grid-template: 1fr 1fr / 9.3% minmax(auto, 1170px) 9.3%;
+    grid-template: 1fr 1fr 1fr / 9.3% minmax(auto, 1170px) 9.3%;
     grid-template-areas:
         "start-block"
         "about"
+        "mission"
     ;
 
     gap: 1rem;
@@ -734,7 +735,7 @@
     .main {
         /* grid-template: minmax(auto, 584px) / 9.3% minmax(auto, 1170px) 9.3%; */
         /* grid-template-rows: minmax(auto, 584px); */
-        grid-template-rows: minmax(auto, 829px) minmax(auto, 600px);
+        grid-template-rows: minmax(auto, 829px) minmax(auto, 600px) minmax(auto, 350px);
 
     }
 
@@ -744,7 +745,7 @@
 
     .main {
         /* grid-template: minmax(auto, 437px) / 1fr minmax(auto, 1170px) 1fr; */
-        grid-template-rows: minmax(auto, 437px) minmax(auto, 310px);
+        grid-template-rows: minmax(auto, 437px) minmax(auto, 310px) minmax(auto, 200px);
     }
 
     .start-block {
@@ -760,7 +761,7 @@
 
     .main {
         /* grid-template: minmax(auto, 400px) / 1fr minmax(auto, 1170px) 1fr; */
-        grid-template-rows: minmax(auto, 400px) minmax(auto, 225px);
+        grid-template-rows: minmax(auto, 400px) minmax(auto, 225px) minmax(auto, 400px);
     }
 
     /* перестроить первый блок */
@@ -881,14 +882,10 @@
 }
 
 .about__image-container1 {
-
-
-
     grid-area: 1 / 1 / 2 / 2;
 }
 
 .about__image-container2 {
-
     grid-area: 2 / 1 / 3 /2;
 }
 
@@ -901,7 +898,6 @@
 }
 
 .about__img {
-
     position: absolute;
     left: 0px;
     top: 0px;
@@ -982,7 +978,7 @@
 
 @media (max-width:320px) {
     .main {
-        grid-template-rows: minmax(auto, 400px) minmax(auto, 350px);
+        grid-template-rows: minmax(auto, 400px) minmax(auto, 330px) minmax(auto, 395px);
     }
 
     .about {
@@ -1018,4 +1014,163 @@
         height: 80%;
     }
 
+}
+
+/* -------------------- */
+/* 3й блок */
+/* -------------------- */
+
+.mission {
+    grid-area: mission;
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+
+    display: grid;
+    grid-template-rows: 20% 1fr;
+    grid-template-columns: 12% 1fr 12% 1fr;
+
+    grid-template-areas:
+        "mission__title"
+        "mission__item-1-num"
+        "mission__item-1-text"
+        "mission__item-2-num"
+        "mission__item-2-text"
+    ;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.mission__title {
+    grid-area: mission__title;
+    grid-column: 1 / 5;
+    grid-row: 1 / 2;
+
+    justify-self: start;
+}
+
+.mission__item-1-num {
+    grid-area: mission__item-1-num;
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+}
+
+.mission__item-1-text {
+    grid-area: mission__item-1-text;
+    grid-column: 2/ 3;
+    grid-row: 2 / 3;
+}
+
+.mission__item-2-num {
+    grid-area: mission__item-2-num;
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+}
+
+.mission__item-2-text {
+    grid-area: mission__item-2-text;
+    grid-column: 4 / 5;
+    grid-row: 2 / 3;
+}
+
+.mission__num-style {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 14.285rem;
+    line-height: 16.714rem;
+    display: flex;
+    align-items: center;
+
+    /* Gray 6 */
+
+    color: #F2F2F2;
+}
+
+.mission__text-style {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.571rem;
+    line-height: 2.571rem;
+    /* or 164% */
+
+
+    /* Gray 1 */
+
+    color: #333333;
+}
+
+@media (max-width: 767px) {
+    .mission {
+
+        display: grid;
+        grid-template-rows: 20% 1fr 1fr;
+        grid-template-columns: 1fr;
+
+        grid-template-areas:
+            "mission__title"
+            "mission__item-1-num"
+            "mission__item-1-text"
+            "mission__item-2-num"
+            "mission__item-2-text"
+        ;
+
+        justify-content: center;
+        align-items: center;
+    }
+
+    .mission__title {
+        grid-area: mission__title;
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+
+        justify-self: start;
+        /* background-color: blue; */
+    }
+
+    .mission__item-1-num {
+        grid-area: mission__item-1-num;
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+    }
+
+    .mission__item-1-text {
+        grid-area: mission__item-1-text;
+        grid-column: 1/ 2;
+        grid-row: 2 / 3;
+    }
+
+    .mission__item-2-num {
+        grid-area: mission__item-2-num;
+        grid-column: 1 / 2;
+        grid-row: 3 / 4;
+    }
+
+    .mission__item-2-text {
+        grid-area: mission__item-2-text;
+        grid-column: 1 / 2;
+        grid-row: 3 / 4;
+    }
+}
+
+@media (max-width: 470px) {
+    .mission {
+
+        display: grid;
+        grid-template-rows: 35% 1fr 1fr;
+        grid-template-columns: 1fr;
+
+        grid-template-areas:
+            "mission__title"
+            "mission__item-1-num"
+            "mission__item-1-text"
+            "mission__item-2-num"
+            "mission__item-2-text"
+        ;
+
+        justify-content: center;
+        align-items: center;
+        height: 500px;
+    }
 }
