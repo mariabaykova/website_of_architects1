@@ -466,14 +466,15 @@
 
     display: grid;
     /* grid-template: minmax(auto, 830px) / 9.3% minmax(auto, 1170px) 9.3%; */
-    grid-template: 1fr 1fr 1fr / 9.3% minmax(auto, 1170px) 9.3%;
+    grid-template: 1fr 1fr 1fr 1fr / 9.3% minmax(auto, 1170px) 9.3%;
     grid-template-areas:
         "start-block"
         "about"
         "mission"
+        "projects"
     ;
 
-    gap: 1rem;
+    gap: 1.5rem;
 }
 
 @media (max-width: 1023px) {
@@ -702,6 +703,11 @@
     color: #FFFFFF;
 }
 
+.black-rectangle:hover {
+    background: #525151;
+    color: #FFFFFF;
+}
+
 .start-block__white-rectangle {
     position: absolute;
     /* width: 222px;
@@ -709,6 +715,32 @@
     left: 0px;
     bottom: 0px;
 }
+
+.rectangle-style {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 0.857rem;
+    line-height: 0.857rem;
+    /* identical to box height, or 100% */
+
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+
+    /* Gray 1 */
+
+    /* color: #333333; */
+
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+.white-rectangle__color {
+    color: #333333;
+}
+
+.black-rectangle__color {}
 
 .start-block__white-rectangle-style {
     font-family: Roboto;
@@ -735,8 +767,8 @@
     .main {
         /* grid-template: minmax(auto, 584px) / 9.3% minmax(auto, 1170px) 9.3%; */
         /* grid-template-rows: minmax(auto, 584px); */
-        grid-template-rows: minmax(auto, 829px) minmax(auto, 600px) minmax(auto, 350px);
-
+        grid-template-rows: minmax(auto, 829px) minmax(auto, 600px) minmax(auto, 350px) minmax(auto, 765px);
+        grid-template-columns: 9.3% minmax(auto, 1170px) 9.3%;
     }
 
 }
@@ -745,7 +777,7 @@
 
     .main {
         /* grid-template: minmax(auto, 437px) / 1fr minmax(auto, 1170px) 1fr; */
-        grid-template-rows: minmax(auto, 437px) minmax(auto, 310px) minmax(auto, 200px);
+        grid-template-rows: minmax(auto, 437px) minmax(auto, 310px) minmax(auto, 200px) minmax(auto, 900px);
     }
 
     .start-block {
@@ -761,7 +793,7 @@
 
     .main {
         /* grid-template: minmax(auto, 400px) / 1fr minmax(auto, 1170px) 1fr; */
-        grid-template-rows: minmax(auto, 400px) minmax(auto, 225px) minmax(auto, 400px);
+        grid-template-rows: minmax(auto, 400px) minmax(auto, 225px) minmax(auto, 400px) minmax(auto, 600px);
     }
 
     /* перестроить первый блок */
@@ -775,7 +807,7 @@
 
     }
 
-    .main__title {
+    .main__title_enabled {
         display: none;
     }
 
@@ -976,9 +1008,17 @@
 
 }
 
+@media (min-width: 319px) and (max-width: 530px) {
+
+    /* перестроение высоты 4го блока projects, когда картинки встают в один ряд */
+    .main {
+        grid-template-rows: minmax(auto, 400px) minmax(auto, 330px) minmax(auto, 395px) minmax(auto, 900px);
+    }
+}
+
 @media (max-width:320px) {
     .main {
-        grid-template-rows: minmax(auto, 400px) minmax(auto, 330px) minmax(auto, 395px);
+        grid-template-rows: minmax(auto, 400px) minmax(auto, 330px) minmax(auto, 395px) minmax(auto, 900px);
     }
 
     .about {
@@ -1172,5 +1212,198 @@
         justify-content: center;
         align-items: center;
         height: 500px;
+    }
+}
+
+
+/* -------------------- */
+/* 4й блок */
+/* -------------------- */
+
+.projects {
+    grid-area: projects;
+
+    grid-column: 2 / 3;
+    grid-row: 4 / 5;
+    /* display: grid; */
+
+    display: grid;
+    grid-template-rows: 15% 1fr 15%;
+
+
+}
+
+.projects__items {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    /* grid-template-rows: 100px; */
+
+    padding-bottom: 1rem;
+}
+
+.projects__item {
+
+    /* padding: 0px 0px 85% 0px; */
+    position: relative;
+    overflow: hidden;
+    /* min-height: 50px;
+    max-height: 100px; */
+    height: 120px;
+}
+
+.projects__shadow {
+    background-color: #333333;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    /* display: none; */
+
+}
+
+.projects__shadow:hover {
+    opacity: 0.7;
+    /* display: none; */
+}
+
+.projects__item-title {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 4.57rem;
+    line-height: 4.57rem;
+    /* or 100% */
+
+
+    color: #FFFFFF;
+
+}
+
+.projects__item-link {
+    position: absolute;
+    top: 7rem;
+    left: 1rem;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+
+    font-family: Gothic A1;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 0.857rem;
+    line-height: 0.857rem;
+    /* identical to box height, or 100% */
+
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+
+    color: #FFFFFF;
+}
+
+.projects__item-link a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.projects__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* overflow: hidden; */
+    /* display: block; */
+}
+
+.projects__rectangle {
+    width: 50%;
+    height: 30%;
+
+    justify-self: end;
+}
+
+@media (max-width: 479px) {
+    .projects__item-title {
+
+        font-size: 2rem;
+        line-height: 2rem;
+        /* or 100% */
+
+
+    }
+}
+
+@media (min-width: 768px) {
+
+    /* сделать разбивку, как на макете для больших экранов */
+
+    /* .projects */
+
+    .projects__items {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: 270fr 270fr 200fr 370fr;
+        grid-template-rows: 1fr 1fr;
+        /* grid-template-rows: 100px; */
+
+        padding-bottom: 1rem;
+    }
+
+    .projects__item {
+
+        /* padding: 0px 0px 85% 0px; */
+        position: relative;
+        /* min-height: 50px;
+        max-height: 100px; */
+        /* height: 50%; */
+
+        /* max-height: 255px;
+        min-height: 200px; */
+        overflow: hidden;
+
+        height: auto;
+        display: block;
+
+    }
+
+
+    .projects__item_big {
+        grid-column: span 2;
+        /* width: 93%; */
+    }
+
+    .projects__item_small {
+        grid-area: 2 / 1 / 3 / 2;
+        /* font-size: 2rem; */
+    }
+
+    .projects__item-title_small {
+        font-size: 2rem;
+    }
+
+    .projects__item_medium-big {
+        grid-area: 2 / 2 / 3 / 4;
+    }
+
+    .projects__item_medium-small {
+        grid-area: 2 / 4 / 3 / 5;
+    }
+
+    .projects__rectangle {
+        width: 20%;
+        height: 60%;
+
+        justify-self: end;
     }
 }
