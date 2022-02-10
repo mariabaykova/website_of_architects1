@@ -138,8 +138,6 @@
 
     .header__menubar a:hover {
         color: #7c7c7c;
-        /* border-top: 1px #7c7c7c solid;
-        border-bottom: 1px #7c7c7c solid; */
     }
 
     .header__list {
@@ -233,8 +231,6 @@
 
 .footer__link:hover {
     color: #7c7c7c;
-    /* border-top: 1px #7c7c7c solid;
-    border-bottom: 1px #7c7c7c solid; */
 }
 
 .footer__conacts {
@@ -466,15 +462,16 @@
 
     display: grid;
     /* grid-template: minmax(auto, 830px) / 9.3% minmax(auto, 1170px) 9.3%; */
-    grid-template: 1fr 1fr 1fr 1fr / 9.3% minmax(auto, 1170px) 9.3%;
+    grid-template: 1fr 1fr 1fr 1fr 1fr / 9.3% minmax(auto, 1170px) 9.3%;
     grid-template-areas:
         "start-block"
         "about"
         "mission"
         "projects"
+        "contact-us"
     ;
 
-    gap: 1.5rem;
+    row-gap: 2rem;
 }
 
 @media (max-width: 1023px) {
@@ -564,12 +561,8 @@
 .slide-numbers {
     grid-column: 1 / 2;
     grid-row: 4 / 5;
-    /* border: 1px green solid; */
-    /* display: inline-block; */
 
     display: grid;
-    /* grid-auto-flow: column; */
-    /* justify-items: end; */
     grid-template: 1fr / 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 
@@ -579,11 +572,6 @@
     font-weight: normal;
     font-size: 1.714rem;
     line-height: 1.714rem;
-    /* identical to box height, or 100% */
-
-
-    /* Gray 4 */
-
     color: #BDBDBD;
 }
 
@@ -690,6 +678,12 @@
     height: 10%;
 }
 
+.rectangle1 {
+
+    width: 15rem;
+    height: 5rem;
+}
+
 .white-rectangle {
     background: #FFFFFF;
 }
@@ -767,7 +761,7 @@
     .main {
         /* grid-template: minmax(auto, 584px) / 9.3% minmax(auto, 1170px) 9.3%; */
         /* grid-template-rows: minmax(auto, 584px); */
-        grid-template-rows: minmax(auto, 829px) minmax(auto, 600px) minmax(auto, 350px) minmax(auto, 765px);
+        grid-template-rows: minmax(auto, 829px) minmax(auto, 600px) minmax(auto, 360px) minmax(auto, 765px) minmax(auto, 603px);
         grid-template-columns: 9.3% minmax(auto, 1170px) 9.3%;
     }
 
@@ -777,7 +771,7 @@
 
     .main {
         /* grid-template: minmax(auto, 437px) / 1fr minmax(auto, 1170px) 1fr; */
-        grid-template-rows: minmax(auto, 437px) minmax(auto, 310px) minmax(auto, 200px) minmax(auto, 900px);
+        grid-template-rows: minmax(auto, 437px) minmax(auto, 310px) minmax(auto, 200px) minmax(auto, 900px) minmax(auto, 603px);
     }
 
     .start-block {
@@ -793,7 +787,7 @@
 
     .main {
         /* grid-template: minmax(auto, 400px) / 1fr minmax(auto, 1170px) 1fr; */
-        grid-template-rows: minmax(auto, 400px) minmax(auto, 225px) minmax(auto, 400px) minmax(auto, 600px);
+        grid-template-rows: minmax(auto, 400px) minmax(auto, 225px) minmax(auto, 400px) minmax(auto, 600px) minmax(auto, 603px);
     }
 
     /* перестроить первый блок */
@@ -956,13 +950,6 @@
     color: #000000;
 }
 
-.about__white-rectangle {
-
-    /* border: 1px red solid; */
-    width: 53%;
-    height: 33%;
-}
-
 @media (min-width: 321px) and (max-width: 767px) {
 
     .about__image-container1,
@@ -993,17 +980,8 @@
         grid-area: 1 / 2 / 2 / 3;
         display: grid;
         justify-items: start;
-        grid-template-rows: 25% 60% 15%;
-
-        border: 1px green solid;
+        grid-template-rows: 25% 45% 30%;
         margin: 0;
-    }
-
-    .about__white-rectangle {
-
-        border: 1px red solid;
-        width: 53%;
-        height: 80%;
     }
 
 }
@@ -1012,13 +990,13 @@
 
     /* перестроение высоты 4го блока projects, когда картинки встают в один ряд */
     .main {
-        grid-template-rows: minmax(auto, 400px) minmax(auto, 330px) minmax(auto, 395px) minmax(auto, 900px);
+        grid-template-rows: minmax(auto, 400px) minmax(auto, 330px) minmax(auto, 395px) minmax(auto, 900px) minmax(auto, 603px);
     }
 }
 
 @media (max-width:320px) {
     .main {
-        grid-template-rows: minmax(auto, 400px) minmax(auto, 330px) minmax(auto, 395px) minmax(auto, 900px);
+        grid-template-rows: minmax(auto, 400px) minmax(auto, 330px) minmax(auto, 395px) minmax(auto, 900px) minmax(auto, 603px);
     }
 
     .about {
@@ -1031,10 +1009,7 @@
     .about__card {
         grid-area: 1 / 1 / 2 / 2;
         display: grid;
-        /* justify-items: start; */
-        grid-template-rows: 17% 70% 13%;
-
-        /* border: 1px green solid; */
+        grid-template-rows: 20% 60% 1fr;
         margin: 0;
     }
 
@@ -1046,14 +1021,6 @@
     .about__image-container3 {
         display: none;
     }
-
-    .about__white-rectangle {
-
-        border: 1px red solid;
-        width: 53%;
-        height: 80%;
-    }
-
 }
 
 /* -------------------- */
@@ -1066,7 +1033,7 @@
     grid-row: 3 / 4;
 
     display: grid;
-    grid-template-rows: 20% 1fr;
+    grid-template-rows: 30% 1fr;
     grid-template-columns: 12% 1fr 12% 1fr;
 
     grid-template-areas:
@@ -1117,8 +1084,8 @@
     font-family: Roboto;
     font-style: normal;
     font-weight: 900;
-    font-size: 14.285rem;
-    line-height: 16.714rem;
+    font-size: 14rem;
+    line-height: 14rem;
     display: flex;
     align-items: center;
 
@@ -1145,7 +1112,7 @@
     .mission {
 
         display: grid;
-        grid-template-rows: 20% 1fr 1fr;
+        grid-template-rows: 30% 1fr 1fr;
         grid-template-columns: 1fr;
 
         grid-template-areas:
@@ -1225,8 +1192,6 @@
 
     grid-column: 2 / 3;
     grid-row: 4 / 5;
-    /* display: grid; */
-
     display: grid;
     grid-template-rows: 15% 1fr 15%;
 
@@ -1282,9 +1247,6 @@
     font-weight: bold;
     font-size: 4.57rem;
     line-height: 4.57rem;
-    /* or 100% */
-
-
     color: #FFFFFF;
 
 }
@@ -1327,28 +1289,22 @@
 }
 
 .projects__rectangle {
-    width: 50%;
-    height: 30%;
+    /* width: 50%;
+    height: 50%; */
 
     justify-self: end;
 }
 
-@media (max-width: 479px) {
+@media (max-width: 767px) {
     .projects__item-title {
-
         font-size: 2rem;
         line-height: 2rem;
-        /* or 100% */
-
-
     }
 }
 
 @media (min-width: 768px) {
 
     /* сделать разбивку, как на макете для больших экранов */
-
-    /* .projects */
 
     .projects__items {
         display: grid;
@@ -1401,9 +1357,143 @@
     }
 
     .projects__rectangle {
-        width: 20%;
-        height: 60%;
+        /* width: 20%;
+        height: 60%; */
 
         justify-self: end;
+    }
+}
+
+
+/* -------------------- */
+/* 5й блок */
+/* -------------------- */
+
+.contact-us {
+    grid-area: contact-us;
+    grid-column: 2 / 3;
+    grid-row: 5 / 6;
+
+    display: grid;
+    grid-template-columns: 391fr 749fr;
+    grid-template-rows: 64fr 369fr 148fr;
+    column-gap: 1rem;
+
+    grid-template-areas:
+        "contact-us__title"
+        "contact-us__form"
+        "contact-us__image-container"
+    ;
+}
+
+.contact-us__title {
+    grid-area: contact-us__title;
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+}
+
+.contact-us__form {
+    grid-area: contact-us__form;
+    grid-column: 1 / 2;
+    grid-row: 2 / 4;
+}
+
+.contact-us__image-container {
+    grid-area: contact-us__image-container;
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+
+
+.contact-us__input {
+    width: 99%;
+    height: 9%;
+    border: none;
+
+    background-color: #F3F3F3;
+    margin-bottom: 0.5rem;
+}
+
+.contact-us__input-style {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1rem;
+    line-height: 1.142rem;
+    letter-spacing: 0.04em;
+
+    color: #8D8D8D;
+    /* padding: 1rem; */
+
+}
+
+.contact-us__message {
+    width: 99%;
+    height: 26%;
+    border: none;
+
+    background-color: #F3F3F3;
+
+}
+
+
+.contact-us__submit {
+    margin-top: 1rem;
+
+    /* width: 65%;
+    height: 10%; */
+
+    background-color: #333333;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 0.857rem;
+    line-height: 0.857rem;
+    /* identical to box height, or 100% */
+
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+
+    color: #FFFFFF;
+
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+.contact-us__submit:hover {
+    cursor: pointer;
+}
+
+.contact-us__image-container {
+    position: relative;
+    overflow: hidden;
+    padding: 0px 0px 0% 0px;
+}
+
+.contact-us__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+
+@media (max-width: 767px) {
+    .contact-us {
+        grid-template-columns: 1fr;
+        grid-template-rows: 64fr 369fr 148fr;
+        /* column-gap: 1rem; */
+    }
+
+    .grid-template-areas: "contact-us__title"
+    "contact-us__form"
+    ;
+
+    .contact-us__image-container {
+        display: none;
     }
 }
