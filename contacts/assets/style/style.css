@@ -20,15 +20,26 @@
     }
 }
 
+.rectangle1 {
+
+    width: 15rem;
+    height: 5rem;
+}
+
 .image-container {
     position: relative;
     overflow: hidden;
     padding: 0px 0px 0% 0px;
 }
 
-.main__link {
+.contacts__link {
     text-decoration: none;
-    color: black;
+    color: #FFFFFF;
+
+}
+
+.contacts__link_black {
+    color: #333333;
 }
 
 .wrapper {
@@ -41,7 +52,8 @@
         "main"
         "footer"
     ;
-    gap: 1rem;
+    gap: 2rem;
+
 }
 
 .header {
@@ -444,10 +456,11 @@
     display: grid;
     grid-template: auto / 9.3% minmax(auto, 1170px) 9.3%;
     grid-template-areas:
-        "gallery"
+        "contacts"
     ;
 
-    row-gap: 2rem;
+    /* row-gap: 3rem; */
+    padding-bottom: 2rem;
 }
 
 @media (max-width: 1023px) {
@@ -459,79 +472,212 @@
 }
 
 
-.gallery {
-    grid-area: gallery;
-    grid-column: 2 / 3;
+.contacts {
+    grid-area: contacts;
     grid-row: 1 / 2;
+    grid-column: 2 / 3;
 
     display: grid;
+
+    grid-template-columns: 3fr 4fr;
+    grid-template-rows: 20% 1fr 1fr 1fr 1fr 1fr;
 
     grid-template-areas:
-        "gallery__title"
-        "gallery__subtitle"
-        "gallery__gap"
-        "gallery__items"
-        "slider__nav"
+        "contacts__title"
+        "contacts__subtitle"
+        "contacts__desc"
+        "contacts__phone-num"
+        "contacts__email"
+        "contact-us__submit"
+        "contacts__map"
+
     ;
-
 }
 
-.gallery__title {
-    grid-area: gallery__title;
+.contacts__title {
+    grid-area: contacts__title;
     grid-row: 1 / 2;
+    grid-column: 1 / 2;
+
+    display: grid;
+    align-content: end;
 }
 
-.gallery__subtitle {
-    grid-area: gallery__subtitle;
+.contacts__subtitle {
+    grid-area: contacts__subtitle;
     grid-row: 2 / 3;
+    grid-column: 1 / 2;
 }
 
-.gallery__gap {
-    grid-area: gallery__gap;
+.contacts__desc {
+    grid-area: contacts__desc;
     grid-row: 3 / 4;
-    height: 2px;
+    grid-column: 1 / 2;
 }
 
-.gallery__items {
-    margin-top: 2rem;
-    grid-area: gallery__items;
+.contacts__phone-num {
+    grid-area: contacts__phone-num;
     grid-row: 4 / 5;
-
-    display: grid;
-    gap: 1.5rem;
-    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-    padding-top: 2rem;
-    border-top: 2px #F2F2F2 solid;
+    grid-column: 1 / 2;
 }
 
-.gallery__item {
-    padding: 0px 0px 0px 0px;
-    position: relative;
-    height: 260px;
-}
-
-.gallery__image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-}
-
-.slider__nav {
-    margin-top: 2rem;
-    grid-area: slider__nav;
+.contacts__email {
+    grid-area: contacts__email;
     grid-row: 5 / 6;
+    grid-column: 1 / 2;
+}
+
+.contacts__submit {
+    grid-area: contact-us__submit;
+    grid-row: 6 / 7;
+    grid-column: 1 / 2;
+}
+
+.contacts__map {
+    grid-area: contacts__map;
+    grid-row: 1 / 7;
+    grid-column: 2 / 3;
+}
+
+.contacts__company-name {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.285rem;
+    line-height: 1.5rem;
+
+    color: #333333;
+}
+
+.contacts__address {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 1.142rem;
+    line-height: 1.642rem;
+    /* or 23px */
+
+
+    color: #333333;
+}
+
+.contacts__phone-num {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.285rem;
+    line-height: 1.5rem;
+    /* identical to box height */
+    color: #333333;
+}
+
+.contacts__email {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 1.142rem;
+    line-height: 1.357rem;
+    color: #333333;
+}
+
+.contacts__submit-style {
+    margin-top: 1rem;
+
+    background-color: #333333;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 0.857rem;
+    line-height: 0.857rem;
+
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+
+    color: #FFFFFF;
 
     display: grid;
-    grid-auto-flow: column;
-    padding: 0.5rem;
-
-    justify-content: start;
+    justify-items: center;
     align-items: center;
-
-    column-gap: 1.5rem;
-
 }
+
+.contacts__submit:hover {
+    cursor: pointer;
+}
+
+@media (max-width: 767px) {
+    .contacts {
+        /* grid-area: contacts;
+        grid-row: 1 / 2;
+        grid-column: 2 / 3; */
+
+        display: grid;
+
+        grid-template-columns: auto;
+        grid-template-rows: 10% 12% 10% 10% 8% 1fr 250px;
+
+        grid-template-areas:
+            "contacts__title"
+            "contacts__subtitle"
+            "contacts__desc"
+            "contacts__phone-num"
+            "contacts__email"
+            "contact-us__submit"
+            "contacts__map"
+
+        ;
+        margin-bottom: 3rem;
+    }
+
+    /* .contacts__title {
+        grid-area: contacts__title;
+        grid-row: 1 / 2;
+        grid-column: 1 / 2;
+
+        display: grid;
+        align-content: end;
+    }
+
+    .contacts__subtitle {
+        grid-area: contacts__subtitle;
+        grid-row: 2 / 3;
+        grid-column: 1 / 2;
+    }
+
+    .contacts__desc {
+        grid-area: contacts__desc;
+        grid-row: 3 / 4;
+        grid-column: 1 / 2;
+    }
+
+    .contacts__phone-num {
+        grid-area: contacts__phone-num;
+        grid-row: 4 / 5;
+        grid-column: 1 / 2;
+    }
+
+    .contacts__email {
+        grid-area: contacts__email;
+        grid-row: 5 / 6;
+        grid-column: 1 / 2;
+    } */
+
+    .contacts__submit {
+        /* grid-area: contact-us__submit;
+        grid-row: 6 / 7;
+        grid-column: 1 / 2; */
+
+        margin-bottom: 2rem;
+    }
+
+    .contacts__map {
+        grid-area: contacts__map;
+        grid-row: 7 / 8;
+        grid-column: 1 / 2;
+
+        margin-bottom: 3rem;
+    }
+}
+
 
 
 .main__title-style {
@@ -550,52 +696,6 @@
     font-size: 4.571rem;
     line-height: 4.571rem;
     color: #333333;
-}
-
-.arrow {
-    width: 3.3rem;
-    height: 3.3rem;
-    background: #FFFFFF;
-    border: 1px solid #F2F2F2;
-    box-sizing: border-box;
-}
-
-.arrow:hover {
-    background-color: #F9F9F9;
-}
-
-.slide-current-num {
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 1.714rem;
-    line-height: 1.714rem;
-    color: #BDBDBD;
-}
-
-.slide-next-num {
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 1.714rem;
-    line-height: 1.714rem;
-
-    color: #BDBDBD;
-}
-
-
-
-.delimiter-symbol {
-    border: 2px solid #E0E0E0;
-    transform: matrix(-0.71, 0.71, -0.71, -0.71, 0, 0);
-    width: 2.5rem;
-    height: 0px;
-    position: relative;
-    top: 0rem;
-
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
-
 }
 
 

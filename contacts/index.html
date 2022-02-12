@@ -8,9 +8,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gothic+A1&family=Open+Sans&family=Roboto+Slab:wght@300&family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/gallery/assets/styles/style.css">
+    <link rel="stylesheet" href="/contacts/assets/style/style.css">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
-    <title>Gallery</title>
+    <title>Contacts</title>
     
 </head>
 <body>
@@ -22,10 +22,10 @@
             <nav class="header__menu">
                 <ul class="header__list">
                     <li class="">
-                        <a href="../main/" class="header__link">main</a>
+                        <a href="../main/index.html" class="header__link">main</a>
                     </li>
                     <li>
-                        <a href="../gallery/" class="header__link header__link_checked">gallery</a>
+                        <a href="../gallery/" class="header__link">gallery</a>
                     </li>
                     <li>
                         <a href="../our_projects/" class="header__link">projects</a>
@@ -34,7 +34,7 @@
                         <a href="../certifications/" class="header__link">certifications</a>
                     </li>
                     <li>
-                        <a href="../contacts/" class="header__link">contacts</a>
+                        <a href="../contacts/" class="header__link header__link_checked">contacts</a>
                     </li>
                 </ul>
                 <div class="header__menubar">
@@ -44,53 +44,26 @@
 
 
         <main class="main"> 
-            <section class="main__gallery gallery">
-            
-                <div class="gallery__title main__title-style">Photo</div>
-                <div class="gallery__subtitle main__subtitle-style">Gallery</div>
-                <div class="gallery__gap"></div>
-                <div class="gallery__items">
-                    <div class="gallery__item">
-                        <img src="/gallery/assets/images/pictures/10.svg" alt="" class="gallery__image">
-                    </div>
-                    <div class="gallery__item">
-                        <img src="/gallery/assets/images/pictures/2.svg" alt="" class="gallery__image">
-                    </div>
-                    <div class="gallery__item">
-                        <img src="/gallery/assets/images/pictures/3.svg" alt="" class="gallery__image">
-                    </div>
-                    <div class="gallery__item">
-                        <img src="/gallery/assets/images/pictures/4.svg" alt="" class="gallery__image">
-                    </div>
-                    <div class="gallery__item">
-                        <img src="/gallery/assets/images/pictures/5.svg" alt="" class="gallery__image">
-                    </div>
-                    <div class="gallery__item">
-                        <img src="/gallery/assets/images/pictures/6.svg" alt="" class="gallery__image">
-                    </div>
-                    <div class="gallery__item">
-                        <img src="/gallery/assets/images/pictures/7.svg" alt="" class="gallery__image">
-                    </div>
-                    <div class="gallery__item">
-                        <img src="/gallery/assets/images/pictures/8.svg" alt="" class="gallery__image">
-                    </div>
-                    <div class="gallery__item">
-                        <img src="/gallery/assets/images/pictures/9.svg" alt="" class="gallery__image">
-                    </div>
-                    <div class="gallery__item">
-                        <img src="/gallery/assets/images/pictures/10.svg" alt="" class="gallery__image">
-                    </div>
-                </div>
-                <div class="slider__nav">
-                        <a href="#" class="slide-current-num">01</a>
-                        
-                        <div class="delimiter-symbol"></div>   
-                                        
-                        <a href="#" class="slide-next-num">05</a>
+            <section class="main__contacts contacts">
+                <div class="contacts__title main__title-style">Contact</div>
+                <div class="contacts__subtitle main__subtitle-style">Information</div>
 
-                        <button class="arrow">&#8592;</button>
-                        <button class="arrow">&#8594;</button>
+                <div class="contacts__desc contacts__address"><span class="contacts__company-name">Company Name</span><br>
+                    1234 Sample Street Austin Texas 76401
                 </div>
+                <div class="contacts__phone-num"><a class="contacts__link contacts__link_black" href="tel:+75123332222">512.333.2222</a></div>   
+                <div class="contacts__email">
+                    <a href="mailto:sampleemail@gmail.com" class="contacts__link contacts__link_black">sampleemail@gmail.com</a>
+                </div>
+                
+                <div class="contacts__submit contacts__submit-style rectangle1">
+                    <a href="#" class="contacts__link">Contact us</a>
+                </div>
+
+                <div class="contacts__map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2184.4444090221327!2d60.606875715214976!3d56.80400501789478!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x43c16ed05e1fb8a7%3A0x64f534ef58f65b63!2sSoyuznaya%20Ulitsa%2C%2027%2C%20Yekaterinburg%2C%20Sverdlovskaya%20oblast&#39;%2C%20620144!5e0!3m2!1sen!2sru!4v1644672983332!5m2!1sen!2sru" width="100%" height="100%" style="1px solid #000000" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+
             </section>
         </main>
         
